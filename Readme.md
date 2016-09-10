@@ -1,2 +1,2 @@
-# Python and Scala Algorithms
+# Python2 and Scala Algorithms
 - Console Addition
