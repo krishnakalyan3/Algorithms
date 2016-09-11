@@ -1,0 +1,22 @@
+import sys
+
+n = int(input())
+nums = [int(i) for i in raw_input().split()]
+assert(n == len(nums))
+
+maxno = 0 
+maxno2 = 0
+maxindex = None
+index2 = None
+for index, number in enumerate(nums):
+	if number > maxno:
+		maxno = number
+		maxindex = index
+
+for index, number in enumerate(nums):
+	if index != maxindex:
+		if number > maxno2:
+			maxno2 = index
+			maxno2 = number
+
+print maxno * maxno2
