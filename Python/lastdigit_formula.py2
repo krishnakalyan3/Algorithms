@@ -1,0 +1,10 @@
+import sys
+import math as m
+n = int(input())
+
+outer = 1/m.sqrt(5)
+inner1 = (1 + m.sqrt(5))/2
+inner2 =  (1 - m.sqrt(5))/2
+
+#print str(int(outer * (inner1 ** n) - outer * (inner2 ** n)))[-1]
+print (outer * (inner1 ** n) - outer * (inner2 ** n)) % 10
