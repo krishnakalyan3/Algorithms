@@ -1,0 +1,16 @@
+#!/usr/bin/env python2
+
+def naive_gcd(a,b):
+	best = 0
+	for i in range(1,a+b+1):
+		if ((a % i == 0) and (b % i == 0)):
+			best = i
+	return best
+
+		
+
+if __name__ == '__main__':
+	raw_n = raw_input().split(" ")
+	n = map(lambda x : int(x), raw_n)
+	print naive_gcd(n[0],n[1])
+	
