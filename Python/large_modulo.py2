@@ -1,0 +1,32 @@
+#!/usr/bin/env python2
+import sys
+def get_fib(m,n):
+	fib = [0,1]
+	for i in range(2,m):
+		fib_add = fib[i-1] + fib[i-2]
+		fib.append(fib_add % n)
+	return fib
+
+def pisano_period(m,n):
+	pisano_not_found = True
+	fib_pisano = [0,1]
+	
+	for i in xrange(2,m):
+		rem_pisano = (fib_pisano[i-1] + fib_pisano[i-2]) % n
+		if ((fib_pisano[i-1] == 0) and (rem_pisano == 1)):
+			break
+		fib_pisano.append(rem_pisano)
+	pp = len(fib_pisano) - 1
+	# (,fib_pisano[:-1])
+	return (m % (pp))% n
+
+if __name__ == '__main__':
+    n, m = map(int, raw_input().split())
+    pisano = pisano_period(m,n)
+    print pisano
+    #sqindex = n % (pisano - 1)
+    #print array_pisano 
+    #print array_pisano[sqindex]
+    #print get_fibonacci_last_digit(m,n)
+    #print array_pisano[sqindex]
+    print get_fib(m,n)
