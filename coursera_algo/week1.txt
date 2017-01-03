@@ -1,0 +1,21 @@
+ # Overview
+- Multiplication
+- Merge Sort
+- Divide and Conqure
+
+## Asymptotic Analysis
+- Big O
+
+## Divide and Conqure
+- Inversions in Array
+- Recursion
+
+# Prerequisites
+- Python
+
+# Motivation
+- Algorithms is a recipie.
+- Database - Indices based on trees
+- Search Engine - Page Rank
+- Algorithms imporovemnets hugeeeee
+- 
