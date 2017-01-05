@@ -1,32 +1,39 @@
 #!/usr/bin/env python2
-import sys
-def get_fib(m,n):
-	fib = [0,1]
-	for i in range(2,m):
-		fib_add = fib[i-1] + fib[i-2]
-		fib.append(fib_add % n)
-	return fib
 
-def pisano_period(m,n):
+# 1 239 =  1
+import sys
+def get_fib(n,m):
+	fib = [0,1]
+	for i in range(2,n+1):
+		fib_add = fib[i-1] + fib[i-2]
+		fib.append(fib_add % m)
+	return fib[n]
+
+def pisano_period(n,m):
 	pisano_not_found = True
+	i = 2
 	fib_pisano = [0,1]
-	
-	for i in xrange(2,m):
-		rem_pisano = (fib_pisano[i-1] + fib_pisano[i-2]) % n
-		if ((fib_pisano[i-1] == 0) and (rem_pisano == 1)):
+	while (True):
+		fib = (fib_pisano[i-1] + fib_pisano[i-2]) % m
+		fib_pisano.append(fib)
+		if (fib_pisano[i-1]==0) and (fib_pisano[i]==1):
 			break
-		fib_pisano.append(rem_pisano)
-	pp = len(fib_pisano) - 1
-	# (,fib_pisano[:-1])
-	return (m % (pp))% n
+		i += 1
+			
+	return (len(fib_pisano[:-2]),fib_pisano)
+
 
 if __name__ == '__main__':
     n, m = map(int, raw_input().split())
-    pisano = pisano_period(m,n)
-    print pisano
+    pp = pisano_period(n,m)
+    rem = n % pp[0]
+    print get_fib(rem, m)
+
+    #pisano = pisano_period(m,n)
+    #print pisano
     #sqindex = n % (pisano - 1)
     #print array_pisano 
     #print array_pisano[sqindex]
     #print get_fibonacci_last_digit(m,n)
     #print array_pisano[sqindex]
-    print get_fib(m,n)
+    #print get_fib(m,n)
