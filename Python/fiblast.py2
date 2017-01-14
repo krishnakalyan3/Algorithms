@@ -16,4 +16,5 @@ if __name__ == '__main__':
     n = int(raw_input())
     pp =  60
     m = n+2 % pp
-    print get_fib(m,10) - 1
+    print m
+    #print get_fib(m,10) - 1
