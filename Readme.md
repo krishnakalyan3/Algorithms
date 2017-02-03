@@ -4,7 +4,10 @@ LinkedList
 Stack
 Queue
 Priority Queue
-Graph
+Graph Algorithms
+- DFS
+- BFS
+- Dijkstras
 Heap
 
 Depth-First Search
